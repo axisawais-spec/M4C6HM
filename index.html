@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <p>
+        use the extend key word to inherit all methods from the parent class
+    </p>
+    <p>
+        use the super method to call the parents constructor
+    </p>
+    <p id="details">
+
+    </p>
+    <script>
+        class car {
+            constructor(brand) {
+                this.carname = brand
+            }
+            present() {
+                return "i have a " + this.carname
+            }
+
+        }
+        class model extends car {
+            constructor(brand, mod) {
+                super(brand)
+                this.model = mod
+            }
+            show() {
+                return this.present() + " it is a " + this.model
+            }
+        }
+        var mycar = new model("toyota", "mustang")
+        document.getElementById("details").innerHTML = mycar.show()
+    </script>
+</body>
+
+</html>
